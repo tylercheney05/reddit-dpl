@@ -1,4 +1,5 @@
 import React from 'react';
+const url = "http://localhost:3000/subs/";
 const Subs = ({ subs }) => {
   return (
     <>
@@ -7,6 +8,16 @@ const Subs = ({ subs }) => {
       { subs.map( (sub) => 
         <div>
           <h3>{sub.title}</h3>
+          <a href={url + sub.id}>Show</a>
+          <br />
+          <a href={url + sub.id + "/edit"}>Edit</a>
+          <br />
+          <a 
+            href={url + sub.id }
+            data-method="delete"
+          >
+            Delete
+          </a>
         </div>
       )}
     </>
