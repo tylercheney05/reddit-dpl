@@ -66,14 +66,17 @@ class SubsController < ApplicationController
     @subs = Sub.all 
     render component: 'Subs', props: { subs: @subs }
   end
+
   def show
     @sub = Sub.find(params[:id])
     render component: 'Sub', props: { sub: @sub }
   end
+
   def new
     @sub = Sub.new
     render component: 'SubNew', props: { sub: @sub }
   end
+  
   def create 
     @sub = Sub.new(sub_params)
     if @sub.save
